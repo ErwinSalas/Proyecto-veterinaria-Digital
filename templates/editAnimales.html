@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="col s12">
+      <div class="card">
+        <div class="card-image">
+          <img height="200" width="300" src="data:image/jpg;base64,{{anim.foto}}">
+          <span class="card-title">{{anim.nombre}}</span>
+        </div>
+
+        <form  action="http://127.0.0.1:5000/animales/edit" enctype="multipart/form-data" method="POST" >
+            <div class="card-content">
+                <div class="row">
+                   <div class="input-field col s8   offset-s2 ">
+                       <p><label >Nombre<br></label></p>
+                       <input    name="nombre" type="text" value="{{anim.nombre}}" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <p><label >Descripcion<br></label></p>
+                      <input   name="descripcion" type="text"  value="{{anim.descripcion}}" class="validate">
+
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <p><label >foto<br></label></p>
+                      <input   name="foto" type="file" class="validate">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-action">
+                 <div class="row">
+                    <div class="input-field  col s8 offset-s2 ">
+                     <button class="btn waves-effect waves-light #3f51b5 indigo " type="submit" name="action">Submit
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+      </div>
+    </div>
+{% endblock %}

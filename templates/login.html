@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/materialize.css')}}">
+     <link rel="stylesheet" href="{{url_for( 'static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/materialize.min.css')}}">
+</head>
+<body class=" row #c5cae9 indigo lighten-4" >
+    <div class="container ">
+         <form class="col s8  z-depth-3 offset-s2 "  action="http://127.0.0.1:5000/" method="POST">
+           <div class="row">
+               <div class="input-field col s8   offset-s2 ">
+                   <p><label >Usuario<br></label></p>
+                   <input   name="user" type="text" class="validate">
+                </div>
+           </div>
+            <div class="row">
+               <div class="input-field  col s8   offset-s2 ">
+                   <p><label >Contraseña<br></label></p>
+                  <input   name="pass" type="password" class="validate">
+
+                </div>
+           </div>
+             <div class="input-field  col s8 offset-s2 ">
+                 <button class="btn waves-effect waves-light " type="submit" name="action">Submit
+                </button>
+            </div>
+         </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{url_for( 'static',filename='js/materialize.js')}}"></script>
+    <script src="{{url_for( 'static',filename='js/init.js')}}"></script>
+</body>
+</html>

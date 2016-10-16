@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/materialize.css')}}">
+     <link rel="stylesheet" href="{{url_for( 'static',filename='css/style.css')}}">
+</head>
+<body class=" row #424242 grey darken-3  " >
+    <div class="row  " style="margin:0;">
+         <nav class=" #82b1ff blue accent-1 ">
+            <div class="nav-wrapper">
+              <form  action="http://127.0.0.1:5000/busqueda/0" method="POST">
+                <div class="input-field">
+                  <input id="search" name="busqueda" type="search" style="magin:0;" required>
+                  <label for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+        </nav>
+    </div>
+    <div class="col s3 no-padding">
+        <div class="row no-padding">
+            <div class="col s12 no-padding ">
+              <div class="card  #424242 grey darken-3" style="margin:0;">
+                <div class="card-image ">
+                  <img src="{{url_for( 'static',filename='background.jpg')}}">
+                  <span class="card-title"><img class="circle " src="{{url_for( 'static',filename='images.jpg')}}"></span>
+                </div>
+                <div class="card-content no-padding">
+                  <h5 class="white-text">Panel de Control<br></h5>
+                  <ul class="no-padding">
+                      <li>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                              <div class="collapsible-header  #424242 grey darken-3"><i class="material-icons white-text">supervisor_account</i>
+                                  <a href="http://127.0.0.1:5000/usuarios/0" class="white-text">Usuarios</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center">
+                                    <li><a href="http://127.0.0.1:5000/usuarios/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/usuarios/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header #424242 grey darken-3 "><i class="material-icons white-text">settings</i>
+                                  <a href="http://127.0.0.1:5000/animales/0" class="white-text">Animales</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center">
+                                    <li><a href="http://127.0.0.1:5000/animales/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/animales/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header  #424242 grey darken-3"><i class="material-icons white-text">new_releases</i>
+                                  <a href="http://127.0.0.1:5000/enfermedades/0" class="white-text">Enfermedades</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center" >
+                                    <li><a href="http://127.0.0.1:5000/enfermedades/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/enfermedades/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header  #424242 grey darken-3 "><i class="material-icons white-text">queue</i>
+                                  <a href="http://127.0.0.1:5000/medicamentos/0" class="white-text">Medicamentos</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center" >
+                                    <li><a href="http://127.0.0.1:5000/medicamentos/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/medicamentos/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header  #424242 grey darken-3"><i class="material-icons white-text">description</i>
+                                  <a href="http://127.0.0.1:5000/prescripciones/0" class="white-text">Prescripciones</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center" >
+                                    <li><a href="http://127.0.0.1:5000/prescripciones/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/prescripciones/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header  #424242 grey darken-3"><i class="material-icons white-text">equalizer</i>
+                                  <a href="http://127.0.0.1:5000/dosis/0" class="white-text">Dosis</a>
+                              </div>
+                              <div class="collapsible-body">
+                                  <ul class="center" >
+                                    <li><a href="http://127.0.0.1:5000/dosis/registrar" class="white-text">Agregar</a></li>
+                                     <li class="divider"></li>
+                                     <li><a href="http://127.0.0.1:5000/dosis/guardar" class="white-text">Guardar</a></li>
+                                </ul>
+                              </div>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <a href="http://127.0.0.1:5000/">Salir</a>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+      <div class="col s9 white  no-padding">
+
+        <div class="container  " style="padding-top:5%;padding-bottom:8%;">
+            <div class="row no-padding " style="border-radius:2%;">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{url_for( 'static',filename='js/materialize.js')}}"></script>
+    <script src="{{url_for( 'static',filename='js/init.js')}}"></script>
+</body>
+</html>

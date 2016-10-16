@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row  z-depth-3">
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th data-field="id">ID</th>
+                  <th data-field="name">Animal</th>
+                  <th data-field="price">Medicamento</th>
+                  <th data-field="price">Enfermedad</th>
+                  <th data-field="price">dosis</th>
+                  <th data-field="price">Rango</th>
+                   <th data-field="price">borrar</th>
+                   <th data-field="price">editar</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+                {% for dosis in dosisList%}
+                    {% if dosis.database==True%}
+                     <tr>
+                    {% endif %}
+                    {% if dosis.database==False%}
+                     <tr class="#b71c1c red darken-4">
+                    {% endif %}
+
+                    <td>{{dosis.id}}</td>
+                    <td>{{dosis.animal}}</td>
+                    <td>{{dosis.medicamento}}</td>
+                    <td>{{dosis.enfermedad}}</td>
+                    <td>{{dosis.dosis}}</td>
+                     <td>{{dosis.pesoMin}} - {{dosis.pesoMax}}</td>
+                    <td><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" href="http://127.0.0.1:5000/dosis/delete/{{dosis.id}}"><i class="material-icons black-text">delete</i></a></td>
+                     <td><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Actualizar" href="http://127.0.0.1:5000/dosis/edit/{{dosis.id}}"><i class="material-icons black-text">edit</i></a></td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+      </table>
+    </div>
+    <div class="row #1565c0 blue darken-3 z-depth-3">
+        <ul class="pagination center">
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            {% for e in range(0,tamaño,6) %}
+            <li class="waves-effect"><a class="active" href="http://127.0.0.1:5000/busqueda/{{e}}">{{e}}</a></li>
+
+            {% endfor %}
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+
+{% endblock %}
+

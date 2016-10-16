@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/materialize.css')}}">
+     <link rel="stylesheet" href="{{url_for( 'static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/materialize.min.css')}}">
+</head>
+<body class="#7986cb indigo lighten-2">
+    <div id="index-banner" class="parallax-container transparencia  z-depth-3" >
+        <div class="section no-pad-bot">
+          <div class="row">
+            <h1 class="header center white-text col s8 offset-s2">Veterinaria Digital </h1>
+          </div>
+          <div class="row ">
+            <h5 class="header center  col s6 offset-s3"> <img src="{{url_for( 'static',filename='texto.png')}}"  ></h5>
+          </div>
+        </div>
+        <div class="parallax">
+          <img src="{{url_for( 'static',filename='banner.jpg')}}" alt="Unsplashed background img 1">
+        </div>
+    </div>
+    <!-- Declaracion de dropdowns -->
+    <ul id="dropdown_usuarios" class="dropdown-content #1a237e indigo darken-4">
+        <li><a href="http://127.0.0.1:5000/usuarios/registrar" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="http://127.0.0.1:5000/usuarios" class="white-text">Ver</a></li>
+         <li class="divider"></li>
+         <li><a href="http://127.0.0.1:5000/usuarios/guardar" class="white-text">Guardar</a></li>
+    </ul>
+    <ul id="dropdown_animales" class="dropdown-content #1a237e indigo darken-4">
+         <li><a href="http://127.0.0.1:5000/animales/registrar" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="http://127.0.0.1:5000/animales" class="white-text">Ver</a></li>
+    </ul>
+    <ul id="dropdown_enfermedades" class="dropdown-content #1a237e indigo darken-4">
+         <li><a href="#" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="#" class="white-text">Ver</a></li>
+    </ul>
+    <ul id="dropdown_medicamentos" class="dropdown-content #1a237e indigo darken-4">
+         <li><a href="http://127.0.0.1:5000/medicamentos/registrar" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="http://127.0.0.1:5000/medicamentos" class="white-text">Ver</a></li>
+    </ul>
+     <ul id="dropdown_dosis" class="dropdown-content #1a237e indigo darken-4">
+         <li><a href="http://127.0.0.1:5000/dosis/registrar" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="http://127.0.0.1:5000/dosis" class="white-text">Ver</a></li>
+    </ul>
+    <ul id="dropdown_prescripcion" class="dropdown-content #1a237e indigo darken-4">
+         <li><a href="http://127.0.0.1:5000/prescripcion/registrar" class="white-text">Agregar</a></li>
+        <li class="divider"></li>
+        <li><a href="http://127.0.0.1:5000/prescripcion" class="white-text">Ver</a></li>
+    </ul>
+    <nav class="#283593 indigo darken-3 row ">
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down yellow-text" style="font-color=#f4ff81">
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_animales" ><img src="{{url_for( 'static',filename='dog.png')}}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_medicamentos" ><img src="{{url_for( 'static',filename='medicina.png')}}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_usuarios" ><img src="{{url_for( 'static',filename='user.png')}}"><i class="material-icons right">arrow_drop_down</i> </a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_enfermedades" ><img src="{{url_for( 'static',filename='enfermedades.png')}}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_dosis" ><img src="{{url_for( 'static',filename='dosis.png')}}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown_prescripcion" ><img src="{{url_for( 'static',filename='prescipcion.png')}}"><i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container ">
+        <div class="row  #c5cae9 indigo lighten-4" style="border-radius:2%;">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{url_for( 'static',filename='js/materialize.js')}}"></script>
+    <script src="{{url_for( 'static',filename='js/init.js')}}"></script>
+</body>
+</html>

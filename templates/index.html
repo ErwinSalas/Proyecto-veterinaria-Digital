@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="row ">
+    {% for user in usuarios %}
+
+        <div class="col s4 ">
+            <div class="row left" >
+                <div class="col s12">
+                  {% if user.database==False%}
+                     <div class="card #b71c1c red darken-4  z-depth-3">
+                  {%endif%}
+                  {% if user.database==True%}
+                    <div class="card  z-depth-3 ">
+                  {%endif%}
+                    <div class="card-image">
+                      <img height="200" width="300" src="data:image/jpg;base64,{{user.foto}}">
+                      <span class="card-title">{{user.nombre}}</span>
+                    </div>
+                    <div class="card-content">
+                      <p>Nombre de Usuario: <br>{{user.login}}</p>
+                        <p>Rol: {{user.permiso}}</p>
+                    </div>
+                    <div class="card-action #ccff90 light-green accent-1">
+                        <td><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Borrar" href="http://127.0.0.1:5000/usuarios/delete/{{user.login}}"><img src="{{url_for( 'static',filename='delete.png')}}"></a></td>
+                        <td><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Actualizar" href="http://127.0.0.1:5000/usuarios/edit/{{user.login}}"><img src="{{url_for( 'static',filename='edit.png')}}"></a></td>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+    <div class="row #82b1ff blue accent-1 z-depth-3">
+        <ul class="pagination center">
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            {% for e in range(0,tamaño,3) %}
+            <li class="waves-effect active"><a  href="http://127.0.0.1:5000/usuarios/{{e}}">{{e}}</a></li>
+
+            {% endfor %}
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        {% for med in medicamentos %}
+            <div class="col s4">
+                <div class="row left" >
+                    <div class="col s12">
+                      {% if med.database==False%}
+                        <div class="card #b71c1c red darken-4">
+                      {%endif%}
+                      {% if med.database==True%}
+                        <div class="card ">
+                      {%endif%}
+                        <div class="card-image">
+                          <img height="200" width="300" src="data:image/jpg;base64,{{med.foto}}">
+                          <span class="card-title">{{med.nombre}}</span>
+                        </div>
+                        <div class="card-content">
+                          <p> Medicamento: {{med.nombre}}</p>
+                            <p>Descripcion: {{med.descripcion}}</p>
+                        </div>
+                        <div class="card-action">
+                            <td><a href="http://127.0.0.1:5000/medicamentos/delete/{{med.nombre}}"><img src="{{url_for( 'static',filename='delete.png')}}"></a>
+                            <a href="http://127.0.0.1:5000/medicamentos/edit/{{med.nombre}}"><img src="{{url_for( 'static',filename='edit.png')}}"></a>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <div class="row #1565c0 blue darken-3 z-depth-3">
+        <ul class="pagination center ">
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            {% for e in range(0,tamaño,3) %}
+            <li class="waves-effect"><a class="active" href="http://127.0.0.1:5000/medicamentos/{{e}}">{{e}}</a></li>
+
+            {% endfor %}
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+{% endblock %}

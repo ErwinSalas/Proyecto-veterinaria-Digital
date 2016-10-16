@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="col s8  z-depth-3 offset-s2 #e8eaf6 indigo lighten-5" action="http://127.0.0.1:5000/prescripciones/registrar"  method="POST">
+       <div class="row">
+           <div class="input-field col s8   offset-s2 ">
+               <p><label >ID</label></p>
+               <input   name="id" type="text" class="validate">
+            </div>
+       </div>
+          <div class="row">
+            <div class="input-field  col s8 offset-s2 ">
+                <p><label >animal <br></label></p>
+               <select name="animal">
+                  <option value="" disabled selected>Elije un animal</option>
+                 {% for e in animales %}
+                    <option value="{{e.nombre}}">{{e.nombre}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Usuario<br></label></p>
+
+               <select name="usuario">
+                  <option value="" disabled selected>Elije un usuario</option>
+                 {% for e in usuarios %}
+                    <option value="{{e.login}}">{{e.login}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Enfermedad<br></label></p>
+               <select name="enfermedad">
+                 <option value="" disabled selected>Elije una enfermedad</option>
+                 {% for e in enfermedades %}
+                    <option value="{{e.nombre}}">{{e.nombre}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Peso  <br></label></p>
+              <input name="peso" type="range" min="0" max="500" step="10"/>
+
+            </div>
+       </div>
+
+        <div class="row">
+            <div class="input-field  col s8 offset-s2 ">
+             <button class="btn waves-effect waves-light #3f51b5 indigo " type="submit" name="action">Submit
+            </button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

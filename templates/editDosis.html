@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="col s8  z-depth-3 offset-s2 #e8eaf6 indigo lighten-5" action="http://127.0.0.1:5000/prescripciones/edit"  method="POST">
+       <div class="row">
+           <div class="input-field col s8   offset-s2 ">
+               <p><label >ID</label></p>
+               <input   name="id" type="text" class="validate" value="{{dosis.id}}">
+            </div>
+       </div>
+         <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Dosis<br></label></p>
+              <input name="dosis" type="number"  min="1" max="400" value="{{dosis.dosis}}">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col s8 offset-s2 ">
+                <p><label >animal <br></label></p>
+               <select name="animal">
+                  <option  value="{{dosis.animal}}"  selected> {{dosis.animal}}</option>
+                 {% for e in animales %}
+                    <option value="{{e.nombre}}">{{e.nombre}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Medicamento<br></label></p>
+
+               <select name="medicamento">
+                  <option  value="{{dosis.medicamento}}"  selected> {{dosis.medicamento}}</option>
+                 {% for e in medicamentos %}
+                    <option value="{{e.nombre}}">{{e.nombre}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Enfermedad<br></label></p>
+               <select name="enfermedad">
+                  <option  value="{{dosis.enfermedad}}"  selected> {{dosis.enfermedad}}</option>
+                 {% for e in enfermedades %}
+                    <option value="{{e.nombre}}">{{e.nombre}}</option>
+                 {% endfor%}
+               </select>
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Peso maximo<br></label></p>
+              <input name="pesoMax" type="range" min="0" max="500" step="10" value="{{dosis.pesoMax}}"/>
+
+            </div>
+       </div>
+         <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Peso minimo<br></label></p>
+              <input name="pesoMin" type="range" min="0" max="500" step="10" value="{{dosis.pesoMin}}"/>
+
+            </div>
+       </div>
+        <div class="row">
+            <div class="input-field  col s8 offset-s2 ">
+             <button class="btn waves-effect waves-light #3f51b5 indigo " type="submit" name="action">Submit
+            </button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

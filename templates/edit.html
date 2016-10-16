@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="col s12">
+      <div class="card">
+        <div class="card-image">
+          <img height="400" width="500" src="data:image/jpg;base64,{{user.foto}}">
+          <span class="card-title"><h3>{{user.nombre}}</h3></span>
+        </div>
+
+        <form  action="http://127.0.0.1:5000/usuarios/edit" enctype="multipart/form-data" method="POST" >
+            <div class="card-content">
+                <div class="row">
+                   <div class="input-field col s8   offset-s2 ">
+                       <h6>Nombre<br></h6>
+                       <input    name="nombre" type="text" value="{{user.nombre}}" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <h6>Usuario<br></h6>
+                      <input   name="login" type="text"  value="{{user.login}}"  class="validate">
+
+                    </div>
+                </div>
+                 <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <h6>Contraseña<br></h6>
+                      <input   name="contraseña" type="text"  value="{{user.pasw}}" class="validate">
+
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <h6>Tipo<br></h6>
+                      <input   name="permiso" type="text" value="{{user.permiso}}" class="validate">
+
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="input-field  col s8   offset-s2 ">
+                       <h6>Foto<br></h6>
+                      <input   name="foto" type="file" class="validate">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-action">
+                 <div class="row">
+                    <div class="input-field  col s8 offset-s2 ">
+                     <button class="btn waves-effect waves-light #3f51b5 indigo " type="submit" name="action">Submit
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="col s8  z-depth-3 offset-s2 #e8eaf6 indigo lighten-5" action="http://127.0.0.1:5000/usuarios/registrar" enctype="multipart/form-data" method="POST">
+       <div class="row">
+           <div class="input-field col s8   offset-s2 ">
+               <p><label >Nombre</label></p>
+               <input   name="nombre" type="text" class="validate">
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field col s8  offset-s2">
+               <p><label >username</label></p>
+              <input   name="login" type="text" class="validate">
+
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field col s8  offset-s2">
+               <p> <label >pass</label></p>
+              <input name="pass" type="text" class="validate">
+
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field col s8  offset-s2">
+               <p><label >rool</label></p>
+              <input   name="permiso" type="text" class="validate">
+
+            </div>
+       </div>
+        <div class="row">
+           <div class="input-field  col s8 offset-s2 ">
+               <p><label >Foto<br></label></p>
+              <input   name="foto" type="file" class="validate">
+
+            </div>
+       </div>
+        <div class="row">
+            <div class="input-field  col s8 offset-s2 ">
+             <button class="btn waves-effect waves-light #3f51b5 indigo " type="submit" name="action">Submit
+            </button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
